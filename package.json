@@ -1,0 +1,19 @@
+{
+  "name": "learnnode",
+  "version": "1.0.0",
+  "description": "learn nodejs",
+  "main": "thin.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "siin68",
+  "license": "ISC",
+  "dependencies": {
+    "express": "5.0.1"
+  },
+  "devDependencies": {
+    "@types/express": "5.0.0",
+    "@types/node": "22.10.7",
+    "typescript": "5.7.3"
+  }
+}
