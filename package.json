@@ -21,13 +21,19 @@
   "author": "siin68",
   "license": "ISC",
   "dependencies": {
+    "@prisma/client": "^6.19.2",
+    "cors": "^2.8.6",
     "dotenv": "16.4.7",
+    "ejs": "3.1.10",
     "express": "5.0.1"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/ejs": "3.1.5",
     "@types/express": "5.0.0",
     "@types/node": "22.10.7",
     "nodemon": "3.1.9",
+    "prisma": "^6.19.2",
     "ts-node": "10.9.2",
     "typescript": "5.7.3"
   }

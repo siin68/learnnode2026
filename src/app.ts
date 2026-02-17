@@ -1,15 +1,30 @@
 import express from 'express';
 import dotenv from 'dotenv';
+import cors from 'cors';
+import foodRoutes from './routes/foodRoutes';
 
-dotenv.config(); // phải gọi trước
-
+dotenv.config(); 
 const app = express();
-const port = process.env.PORT || 3000; // thêm fallback cho chắc
+const port = process.env.PORT || 3000; 
 
-app.get('/', (req, res) => {
-  res.send('Hello, da!');
+// Middleware
+app.use(cors()); 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true })); 
+
+// Health check
+app.get('/api/health', (req, res) => {
+  res.json({ 
+    status: 'OK',
+    message: 'Backend is running!',
+    timestamp: new Date() 
+  });
 });
+
+// Routes
+app.use('/api/foods', foodRoutes);
 
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
+  console.log(`Food API available at http://localhost:${port}/api/foods`);
 });
