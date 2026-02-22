@@ -6,6 +6,9 @@ export class FoodModel {
   // Lấy tất cả món ăn
   static async getAll() {
     return await prisma.food.findMany({
+      omit: {
+        createdAt: true,
+      },
       orderBy: {
         createdAt: 'desc'
       }
@@ -15,7 +18,10 @@ export class FoodModel {
   // Lấy món ăn theo ID
   static async getById(id: number) {
     return await prisma.food.findUnique({
-      where: { id }
+      where: { id },
+      omit: {
+        createdAt: true,
+      }
     });
   }
 

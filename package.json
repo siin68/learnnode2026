@@ -18,6 +18,9 @@
     ],
     "exec": "ts-node ./src/app.ts"
   },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
+  },
   "author": "siin68",
   "license": "ISC",
   "dependencies": {
